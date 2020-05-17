@@ -26,10 +26,10 @@ HttpHeaders headers = new HttpHeaders();
 	
 	public User getFollowers(String username) {
 headers.setContentType(MediaType.APPLICATION_JSON);
-		headers.set("Authorization", "token 93edf313f8f805edabbe3018d1f37dbea5987129");
+		headers.set("Authorization", "token f1c21192329a6b2737259d90458eb4f39202dbe1");
 		headerEntity = new HttpEntity<String>(headers);
 	 user1 = rt.exchange(serviceUrl+username, HttpMethod.GET, headerEntity, User.class).getBody();
-	 url = user1.getFollowers_url();
+//	 url = user1.getFollowers_url();
 	 return user1;
 	 
 	 

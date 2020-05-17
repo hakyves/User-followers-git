@@ -1,5 +1,8 @@
 package com.hak.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,10 +16,18 @@ import com.hak.service.GitSearchServ;
 public class gitSearchController {
 	@Autowired
 	public GitSearchServ gitservice;
+//	User[] user;
+	int i;
 	
 	@GetMapping("/gitfollowers/{username}")
 	public User getFollowersc(@PathVariable("username") String username) {
-		return gitservice.getFollowers(username);
+	//	List <User> user = new ArrayList<>();
+		User users = new User();
+		int iteration = 3;
+		
+		gitservice.getFollowers(username);
+		 gitservice.getFollower1(users, iteration);
+		 return users;
 	
 		
 		
